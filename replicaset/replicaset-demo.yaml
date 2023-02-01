@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-helloworld-rs
+  labels:
+    app: my-hellowworld
+spec:
+  replicas: 3
+  selector:
+    app: my-hellowworld
+  template:
+    metadata:
+      
+      labels:
+        app: my-hellowworld
+    spec:
+      containers:
+        - name: my-hellowworld-app
+          image: stacksimplify/kube-helloworld:1.0.0
+        
