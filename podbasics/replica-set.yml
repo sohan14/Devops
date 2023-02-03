@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp2-rs
+  labels:
+    app: myapp
+   
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp2
+
+  template:
+    metadata:
+      name: myapp2-pod
+      labels:
+        app: myapp2
+    spec:
+      containers:
+      - name: myapp2
+        image: stacksimplify/kubenginx:2.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+
