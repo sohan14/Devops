@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-d
+  name: my-backend-service
 spec:
-  type: LoadBalancer
   selector:
-    app: myapp3
+    app: myapp-backend
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8080

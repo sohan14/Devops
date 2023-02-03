@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-d
+  name: myapp-lb
 spec:
   type: LoadBalancer
   selector:
-    app: myapp3
+    app: front-end-nginx-app
   ports:
   - port: 80
     targetPort: 80

@@ -1,23 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deploy
+  name: backend-restapp
+  labels:
+    app: backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapp3
+      app: myapp-backend
   template:
     metadata:
       labels:
-        app: myapp3
+        app: myapp-backend
     spec:
       containers:
-      - name: myapp3
-        image: stacksimplify/kubenginx:3.0.0
+      - name: myapp-backend
+        image: stacksimplify/kube-helloworld:1.0.0
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 8080

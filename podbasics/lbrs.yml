@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: myapp-rs
 spec:
+  type: LoadBalancer
   selector:
-    type: LoadBalancer
     app: myapp2
   ports:
   - port: 80
