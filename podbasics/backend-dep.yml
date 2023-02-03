@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-restapp
   labels:
-    app: backend
+    app: myapp-backend
 spec:
   replicas: 2
   selector:
@@ -17,9 +17,5 @@ spec:
       containers:
       - name: myapp-backend
         image: stacksimplify/kube-helloworld:1.0.0
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
