@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usrmgmt-service
+  labels:
+    app: usrmgmt-web-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: usrmgmt-web-app
+  ports:
+  - port: 80
+    targetPort: 8080
